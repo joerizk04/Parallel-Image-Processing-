@@ -39,14 +39,21 @@ ThreadCount,ProcessingTime,Speedup
 
 ## Brief Code Explanation 
 The 'GaussianBlur' class applies the blur filter either sequentially or in parallel
+
 GaussianBlur(float sigma) initializes the Gaussian kernel (or filter) based on the sigma value controlling the blur strength
+
 applySequential(BufferedImage) applies the window or also named kernel to each pixel using nested loops (sequential). It is simple but slow
+
 applyParallel(BufferedImage) uses ForkJoinPool + RecursiveTask (BlurTask) to divide the image into smaller regions and blur them in parallel (we are dividing the main task between multiple threads)
+
 blurRegionWithPadding() applies blur to a region with padding to avoid edge artifacts resulting in a clean output image
+
 mergeQuadrants combines the four processed image parts (quadrants) into one final image
 
 The 'Processor' class handles batch processing of images, it uses an ExecutorService to run multiple image blurring tasks in parallel
+
 processSequential(List<String>) for sequrntial processing
+
 processParallel(List<String>) for parallel processing
 
 The 'ProcessingResult' class holds a list of processed images and total processing time to compare sequential vs. parallel performance
