@@ -4,10 +4,10 @@ This project shows how to apply Gaussian blur filter to images using both sequen
 
 ## Files We Included
 
-###- `MainApp.java`:
+### `MainApp.java`:
 Application logic java code that generates test images and applies on them sequential processing (gaussian blur), the same process is applied using parallel programming concept and threads. The processing time and the speedup are compared based on the thread count (we notice that for a single thread, sequential and parallel programming have the same delay time since we are not benefiting from parallel programming). When the thread count increases, not only the performance and speed up increase but the CPU and RAM usage also increase indicating the full benefit of the machine performance. 
 
-###- `UI.java`:
+### `UI.java`:
 User interface making the filtering process more flexible and visually more attractive, where the user can tune the number of threads and the parameter 'sigma' indicating the blur strength of the gaussian filter. Also the output image after applying the filter can be saved on the computer. We can notice that the output is consistent between the sequential method and parallel method. In addition, the processing time is printed and is very much less for parallel processing for the same blur strength. It is easily shown that the processing time is inversely proportional to the number of threads for a specific range depending on the CPU (sometimes if the CPU contains less cores, increasing the number of threads will result in an increased processing time because of context switching)
 
 ## 🚀 Features
@@ -20,13 +20,21 @@ User interface making the filtering process more flexible and visually more attr
 
 ## Output Example
 Found 10 test images
+
 Image Processing Benchmark
+
 Images: 10
+
 ThreadCount,ProcessingTime,Speedup
+
 1,23.746,1.00
+
 2,5.751,4.13
+
 4,10.734,2.21
+
 8,2.825,8.41
+
 16,2.912,8.15
 
 ## Brief Code Explanation 
